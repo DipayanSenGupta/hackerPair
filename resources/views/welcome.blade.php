@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col mh-100">
             <p>
-                Welcome to HackerPair. This is where a list of upcoming events will eventually go.
+                Welcome to Laravel. This is where a list of upcoming events will eventually go.
             </p>
         </div>
     </div>

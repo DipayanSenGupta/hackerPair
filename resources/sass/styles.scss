@@ -1,0 +1,232 @@
+// Colors
+
+$background-primary-color: #0D2133;
+
+$header-primary-color: #FFC200;
+$header-secondary-color: #FFFFFF;
+$header-tertiary-color: #298CCB;
+
+$border-primary-color: #538EA6;
+
+// General
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h4 {
+  margin-top: 15px;
+  color: $header-tertiary-color;
+}
+
+// HT: https://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 5 !important;
+  }
+}
+
+// Navbar
+
+.navbar-custom {
+  background-color: $background-primary-color;
+  border-bottom: $border-primary-color 1px solid;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #FFFFFF;
+
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #6FA8BF;
+}
+
+/*
+ * Change navbar-toggler inside lines color (stroke)
+ * HT: https://stackoverflow.com/questions/41896043/bootstrap-4-collapsed-navbar-background-color
+ */
+span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  color: white;
+}
+
+// Logo
+
+.logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: white;
+}
+
+// Jumbotron
+
+.jumbotron {
+  -webkit-box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px black;
+  background: url(/img/bg/header-map.png);
+  padding: 15px 0 20px 0;
+  text-align: left;
+  margin: 0 0 25px 0;
+  border: 0px;
+}
+
+// Headings
+
+.jumbotron h1 {
+  color: $header-primary-color;
+  font-size: 3em;
+  font-weight: 900;
+}
+
+.jumbotron h2 {
+  font-size: 2em;
+  margin-top: 3px;
+  color: $header-secondary-color;
+  font-weight: 700;
+}
+
+// Stars
+
+.fa-star {
+  color: red;
+}
+
+// Book
+
+.book {
+  border: 1px solid black;
+}
+
+// Cards
+
+.card {
+  border-radius: 0px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.card-title {
+  padding: 10px;
+  color: black;
+}
+
+.card-title.map {
+  padding: 0px;
+}
+
+.card-title.nearby {
+  background-color: #2c4762;
+}
+
+.card-subtitle {
+  padding: 5px;
+}
+
+.card-text {
+  padding: 5px;
+}
+
+/**
+ * Event Details
+ */
+
+.event-header-date {
+  color: white;
+}
+
+.event-box {
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 1px black;
+}
+
+.event-bar {
+  font-size: 0.9em;
+  padding: 5px 0px 5px 0px;
+}
+
+.event-ticket-box {
+  padding: 10px;
+  color: white;
+  border: 1px white solid;
+  background-color: #298CCB;
+}
+
+.event-ticket-box a {
+  color: black;
+}
+
+/**
+ * Cool footer HT: https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
+ * Sticky footer HT: https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
+ */
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: $background-primary-color;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#myFooter .footer-copyright {
+  padding-top: 10px;
+  padding-bottom: 3px;
+  text-align: center;
+  color: #ccc;
+  background-color: $background-primary-color;
+}
+
+#myFooter ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.0;
+}
+
+#myFooter h5 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+#myFooter .social-networks {
+  background-color: $background-primary-color;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+#myFooter .social-networks a {
+  font-size: 32px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #f9f9f9;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  #myFooter {
+    text-align: center;
+  }
+}

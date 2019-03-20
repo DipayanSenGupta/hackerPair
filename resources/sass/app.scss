@@ -1,14 +1,16 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700");
+
+@import url("https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+@import "~bootstrap/scss/bootstrap";
+@import "styles";

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use Illuminate\Http\Request;
 use Carbon\Carbon ;
+use App\Http\Requests\EventStoreRequest;
 
 class EventsController extends Controller
 {
@@ -36,21 +37,34 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventStoreRequest $request)
     {
+
+        //when not using event:request for store action, uderline would work
+
+        // $request->validate([
+        // 'name' => 'required|string|min:10|max:50',
+        // 'max_attendees' => 'required|integer|digits_between:2,5',
+        // 'description' => 'required|string'
+        // ]);
+
+
+        // $messages = [
+        //     'required'=>'Please provide an event :attribute','max_attendees.required'=>'What is the maximum number of attendees allowed to attend your event?',
+                
+        //         'name.min'=>'Event names must consist of at least 10 characters',
+                
+        //         'name.max'=>'Event names cannot be longer than 50 characters',
+                
+        //         'max_attendees.digits_between'=>'We try to keep events cozy,consisting of between 2 and 5 attendees, including you.'
+        // ];
+
+        // Validator::make($request->input(), $rules. $messages)->validate();
+
         $event = Event::create([
             $request->input()
         ]);
-//         $event = new Event;
-//         $event->name = $request->name;
-// $event->max_attendees = $request->max_attendees;
-// $event->description = $request->description;
-// $event->venue = $request->venue;
 
-// $event->city = $request->city;
-// $event->published = $request->published;
-// $event->started_at = Carbon::now();
-// $event->save();
     flash('Event created!')->success();
     return redirect()->route('events.show')->with('event',$event);
     }

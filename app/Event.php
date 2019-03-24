@@ -4,11 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Event extends Model
 {
 	use Sluggable;
+    use SoftDeletes;
 
+protected $fillable = [
+'venue','city','description','published','max_attendees','name'
+];
+
+    protected $dates = [
+        'created_at',
+        'deleted_at',
+        'started_at',
+        'updated_at'
+    ];
 
 		public function Sluggable(){
 			return [

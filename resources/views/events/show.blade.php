@@ -10,6 +10,8 @@
     </div>
 @endsection
 
+
+
 @section('content')
 
 <h1>{{	$event->name }}</h1>
@@ -24,4 +26,14 @@
 	{{$event->description}}
 </p>
 
+<p style="text-align: center;">
+	{{ link_to_route('events.edit','Edit Event', ['event'=>$event])}}
+</p>
+
+
+<p style="text-align: center;">
+	{{ link_to_route('events.destroy','Delete Event', ['event'=>$event])}}
+</p>
+
 @endsection
+

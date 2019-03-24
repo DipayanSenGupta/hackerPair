@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use Illuminate\Http\Request;
-use App\Event ;
+use Carbon\Carbon ;
+
 class EventsController extends Controller
 {
     /**
@@ -11,7 +13,6 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         $events = Event::all();
@@ -26,7 +27,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -37,52 +38,75 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = Event::create([
+            $request->input()
+        ]);
+//         $event = new Event;
+//         $event->name = $request->name;
+// $event->max_attendees = $request->max_attendees;
+// $event->description = $request->description;
+// $event->venue = $request->venue;
+
+// $event->city = $request->city;
+// $event->published = $request->published;
+// $event->started_at = Carbon::now();
+// $event->save();
+    flash('Event created!')->success();
+    return redirect()->route('events.show')->with('event',$event);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Event $event)
     {
-        $event = Event::findOrFail($id);
         return view('events.show')->with('event',$event);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
-        //
+        return view('events.edit')->with('event', $event);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
-        //
+        $event->update(
+            $request->input()
+        );
+
+        return redirect()
+            ->route('events.show',$event)
+            ->with('message', 'Event updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Event $event)
     {
-        //
+        $event->delete();
+
+        return redirect()
+            ->route('events.index')
+            ->with('message','The event has been deleted');
     }
 }

@@ -48,5 +48,15 @@ protected $fillable = [
     return join(' ',$modifiedName);
 
     }
+    public function state() 
+    {
+
+        return $this->belongsTo('App\State');
+    }
+
+    public function users() {
+        return $this->belongsToMany('App\User')
+        ->withTimestamps();
+    }
 
 }

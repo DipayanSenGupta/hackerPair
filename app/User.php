@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -17,6 +20,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password',
+    ];
+        protected $dates = [
+        'created_at',
+        'deleted_at',
+        // 'started_at',
+        'updated_at'
     ];
 
     /**
@@ -37,5 +46,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function profile() {
+        return $this->hasOne('App\Profile');
+    }
 
+    public function events() {
+        return $this->belongsToMany('App\Event')
+        ->withTimestamps();
+    }
 }

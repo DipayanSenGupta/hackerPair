@@ -23,7 +23,7 @@ Route::get('/', 'WelcomeController@index');
 
  // Route::get('events', 'EventsController@index')->name('events.index');
  // Route::get('events/{id}', 'EventsController@show')->name('events.show');
-
+Route::resource('contacts','ContactController');
 
 Route::resource('events','EventsController');
  Route::get('languages', 'LanguagesController@index')->name('languages.index');

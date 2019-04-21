@@ -40,6 +40,12 @@ Route::get('auth/github/callback', 'SocialGithubController@handleProviderCallbac
 
 Route::get('home', 'HomeController@index')->name('home');
 
-
+Route::group(['prefix'=>'admin','namespace'=> 'Admin'
+	,'middleware'=>'admin'],function(){
+	Route::resource('user','UsersController');
+	Route::resource('list','ListsController');
+	Route::resource('product','ProductsController');
+	Route::resource('category','CategoriesController');
+});
 
 

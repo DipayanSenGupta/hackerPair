@@ -1,7 +1,7 @@
 <footer class="footer d-md-block d-xs-none" id="myFooter">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-6 col-sm-12">
                 <h5>Get started</h5>
                 <ul>
                     <li>
@@ -12,39 +12,18 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-6 col-sm-12">
                 <h5>About Us</h5>
                 <ul>
                     <li>
                         {{ link_to_route('about.index', 'About HackerPair', [], ['class' => 'nav-link']) }}
                     </li>
                     <li>
-                        {{ link_to_route('contact.index', 'Contact Us', [], ['class' => 'nav-link']) }}
+                        {{ link_to_route('contact.create', 'Contact Us', [], ['class' => 'nav-link']) }}
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-12">
-                <h5>Support</h5>
-                <ul>
-                    <li>
-                        {{ link_to_route('about.faq', 'FAQ', [], ['class' => 'nav-link']) }}
-                    </li>
-                    <li>
-                        {{ link_to_route('contact.index', 'Contact Support', [], ['class' => 'nav-link']) }}
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <h5>Legal</h5>
-                <ul>
-                    <li>
-                        {{ link_to_route('about.tos', 'Terms of Service', [], ['class' => 'nav-link']) }}
-                    </li>
-                    <li>
-                        {{ link_to_route('about.privacy', 'Privacy Policy', [], ['class' => 'nav-link']) }}
-                    </li>
-                </ul>
-            </div>
+            <div class="col-md-3 col-sm-12"></div>
         </div>
         <div class="row">
             <div class="col-md-12 social-networks">

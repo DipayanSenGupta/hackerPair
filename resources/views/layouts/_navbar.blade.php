@@ -1,5 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-custom">
+@if (App::environment('production'))
+<nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #F9B608">
+    <div class="container" style="text-align: center">
+        <div class="col">
+            HackerPair is currently a <strong>demo</strong> project. Data is regularly deleted.
+            {!! link_to_route('about.index', 'More') !!}
+        </div>
+    </div>
+</nav>
+@endif
+<nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #0D2133;">
     <div class="container">
+
         <a class="logo" href="{{ url('/') }}">
             HackerPair
         </a>
@@ -11,22 +22,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    {{ link_to_route('locations.index', 'Locations', [], ['class' => 'nav-link']) }}
-                </li>
-                <li class="nav-item">
                     {{ link_to_route('events.index', 'Events', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('languages.index', 'Languages', [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('locations.index', 'Locations', [], ['class' => 'nav-link']) }}
                 </li>
-                <li class="nav-item">
-                    {{ link_to_route('maps.index', 'Map', [], ['class' => 'nav-link']) }}
-                </li>
+ 
                 <li class="nav-item">
                     {{ link_to_route('about.index', 'About', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('contact.index', 'Contact Us', [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('contact.create', 'Contact Us', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
                     {{ link_to_route('about.book', 'The Book', [], ['class' => 'nav-link']) }}
@@ -39,12 +45,13 @@
                 @auth
                     <li class="nav-item dropdown">
                         <a href="#" class="dropdown-toggle nav-link" id="navbarDropdown" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Hi, {{ Auth::user()->first_name }} <span class="caret"></span>
+                            Hi, {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropDown">
-                            <li>{{ link_to_route('accounts.edit', 'Your Account Profile', ['id' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
-                            <li>
+                          
+                     
+                      
                                 <a href="{{ route('logout') }}"
                                    class="dropdown-item"
                                    onclick="event.preventDefault();
@@ -59,12 +66,12 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">{!! link_to_route('events.create', 'Post Event', [], ['class' => 'nav-link']) !!}</li>
+                
                 @else
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @endauth
-       
+
             </ul>
 
         </div>

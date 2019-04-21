@@ -20,6 +20,7 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
@@ -42,6 +43,12 @@ return [
             'secret' => env('STRIPE_WEBHOOK_SECRET'),
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
+    ],
+
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_KEY'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_CALLBACK'),
     ],
 
 ];

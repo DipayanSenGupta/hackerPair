@@ -10,8 +10,6 @@
 
     <title>{{ config('app.name', 'HackerPair') }}</title>
 
-    <script src="https://use.fontawesome.com/811fe8e43b.js"></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -24,18 +22,7 @@
 
     <div class="container">
 
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @include('flash::message')
-        @yield('content')
+        @include('layouts._container_content')
 
     </div>
 
@@ -45,5 +32,6 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://use.fontawesome.com/811fe8e43b.js"></script>
 </body>
 </html>

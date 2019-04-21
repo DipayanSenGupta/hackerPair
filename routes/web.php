@@ -19,11 +19,11 @@ Route::get('/', 'WelcomeController@index');
  Route::view('about/privacy', 'about.privacy')->name('about.privacy');
  Route::view('about/tos', 'about.tos')->name('about.tos');
 
- Route::view('contact', 'contact.index')->name('contact.index');
+ // Route::view('contact', 'contact.index')->name('contact.index');
 
  // Route::get('events', 'EventsController@index')->name('events.index');
  // Route::get('events/{id}', 'EventsController@show')->name('events.show');
-Route::resource('contacts','ContactController');
+Route::resource('contact','ContactController');
 
 Route::resource('events','EventsController');
  Route::get('languages', 'LanguagesController@index')->name('languages.index');
@@ -32,4 +32,14 @@ Route::resource('events','EventsController');
 
  Route::get('map', 'MapsController@index')->name('maps.index');
 
- Auth::routes();
+
+Auth::routes();
+
+Route::get('auth/github', 'SocialGithubController@redirectToProvider');
+Route::get('auth/github/callback', 'SocialGithubController@handleProviderCallback');
+
+Route::get('home', 'HomeController@index')->name('home');
+
+
+
+

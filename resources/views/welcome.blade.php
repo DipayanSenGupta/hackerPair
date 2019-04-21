@@ -14,7 +14,13 @@
     <div class="row">
         <div class="col mh-100">
             <p>
-                Welcome to Laravel. This is where a list of upcoming events will eventually go.
+                @auth
+                Welcome {{ Auth::user()->name }} to hackerPair. This is where a list of upcoming events will eventually go.
+                @else
+                Hello stranger ! <a href="{{ route('login') }}">Login</a>
+                or <a href="{{route('register')}}">Register</a> or 
+                <a href="/auth/github">Login with GitHub</a>
+                @endauth
             </p>
         </div>
     </div>

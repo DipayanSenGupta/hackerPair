@@ -48,4 +48,5 @@ Route::group(['prefix'=>'admin','namespace'=> 'Admin'
 	Route::resource('category','CategoriesController');
 });
 
-
+Route::view('vue','vue');
+Route::resource('/api/events','API\EventsController');

@@ -1,23 +1,30 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+        {{ greeting }}<br/>
+        <button @click="updateTimestamp">Update</button>
     </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
+
+export default{
+    props:{
+        greeting: String
+    },
+    // data() {
+    //     return {
+    //         // greeting: new Date().toLocaleString()
+    //     }
+    // },
+    methods: { 
+        updateTimestamp() {
+            // this.greeting = new Date().toLocaleString()
+            this.greeting = 'Hackerpair'
         }
     }
+    // mounted(){
+    //     console.log('Component mounted.')
+    // }
+}
+
 </script>

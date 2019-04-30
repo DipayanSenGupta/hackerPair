@@ -2,9 +2,9 @@
 
 (1)
 
-*Managing Controller,Layout,view,route
-*Adding Laravel Mix to bundle up CSS & JS   
-*Adding Laravel Dusk for testing
+* Managing Controller,Layout,view,route
+* Adding Laravel Mix to bundle up CSS & JS   
+* Adding Laravel Dusk for testing
 
 (2)
 
